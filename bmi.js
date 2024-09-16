@@ -1,13 +1,14 @@
 //Building BMI Calculator
-document.getElementById("btn").addEventListener("click", function (e){
+$("#btn").click(function (e){
 
     e.preventDefault();
 
-    var wt = document.getElementById("weight").value;
-    var ht = document.getElementById("height").value;
+    var wt = $("#weight").val();
+    var ht = $("#height").val();
 
     var BMI = Math.floor((wt / (ht * ht)));
-    // alert("Your BMI is " + BMI);
+    
+    var weight_value;
 
     if(BMI < 18.5){
         weight_value= "You are underweight.";
@@ -21,9 +22,8 @@ document.getElementById("btn").addEventListener("click", function (e){
     else if(BMI >= 30){
         weight_value = "You are obese.";
     }
-    // alert("Your BMI is " + BMI + " .You are " + weight_value);
 
-    document.getElementById("btn").innerText = "Your BMI is " + BMI + "." + weight_value;
+    $("#btn").text("Your BMI is " + BMI + "." + weight_value);
 });
 
 
